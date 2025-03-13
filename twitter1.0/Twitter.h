@@ -31,15 +31,14 @@ void TwitterClass<T> :: AddFollower()
 	string follower;
 	int i = 0;
 
-	cout << "What is the username of the follower you would like to add?" << endl;
+	cout << "What is the username of the follower you would like to add?\n";
 	cin >> follower;
 
 	if (nums.length() == numoffollowers)
 	{
 		nums.changeSize(nums.length() * 2);
-		cout << "Follower list was full. Doubling the size! \n";
+		cout << "\nFollower list was full. Doubling the size! \n";
 		AddFollower();
-
 	}
 	else
 	{
@@ -66,6 +65,7 @@ void TwitterClass<T> :: AddFollower()
 template <typename T>
 void TwitterClass<T> :: PrintFollower() const
 {
+	cout << "You have " << numoffollowers << " followers.\n";
 	cout << "Your followers are: " << endl;
 
 	for (int i = 0; i < nums.length(); i++)

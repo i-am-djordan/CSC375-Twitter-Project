@@ -62,7 +62,7 @@ void Menu(TwitterClass<string>&user, int choice)
 	}
 	else
 	{
-		cout << "You entered in the wrong input." << endl;
+		cout << "You entered in the wrong input.\n";
 		choice = question();
 		Menu(user, choice);
 
