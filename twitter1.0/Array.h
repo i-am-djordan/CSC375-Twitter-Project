@@ -11,6 +11,7 @@ class Array
 public:
 	Array(int size);
 	inline A& operator[](int index);
+	inline const A& operator[](int index) const;
 	void changeSize(int newSize);
 	inline int length() const;
 	string err() const;
@@ -55,7 +56,7 @@ inline A& Array<A>::operator[](int index)
 }
 
 template <typename A>
-const inline A& Array<A>::operator[](int index)
+inline const A& Array<A>::operator[](int index) const
 {
 #ifdef DEBUG_ARRAY
 	if (index < 0 || index >= capacity)
