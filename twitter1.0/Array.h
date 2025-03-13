@@ -55,6 +55,20 @@ inline A& Array<A>::operator[](int index)
 }
 
 template <typename A>
+const inline A& Array<A>::operator[](int index)
+{
+#ifdef DEBUG_ARRAY
+	if (index < 0 || index >= capacity)
+	{
+		errorCode |= 2;
+		return dud;
+	}
+
+#endif 
+	return elements[index];
+}
+
+template <typename A>
 void Array<A>::changeSize(int newSize)
 {
 	if (newSize < 1)
