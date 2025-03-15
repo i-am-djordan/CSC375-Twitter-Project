@@ -80,10 +80,13 @@ void Array<A>::changeSize(int newSize)
 	A* newArray = new A[newSize];
 	int limit = (newSize > capacity) ? capacity : newSize;
 
-	for (int i = 0; i < limit; i++)
+	for (int i = 0; i < limit; i++) 
+	{
 		newArray[i] = elements[i];
+	}
+		
 
-	delete[]elements;
+	delete[] elements;
 	elements = newArray;
 
 	capacity = newSize;

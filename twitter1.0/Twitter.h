@@ -30,7 +30,6 @@ template <typename T>
 void TwitterClass<T> :: AddFollower()
 {
 	string follower;
-	int size = nums.length();
 	int i = 0;
 
 	cout << "What is the username of the follower you would like to add?\n";
@@ -38,25 +37,22 @@ void TwitterClass<T> :: AddFollower()
 
 	if (nums.length() == numoffollowers)
 	{
-		nums.changeSize(size * 2);
+		nums.changeSize(nums.length() * 2);
 		cout << "\nFollower list was full. Doubling the size! \n";
-		AddFollower();
 	}
-	else
-	{
-		for (i = 0; i < nums.length(); i++)
-		{
 
-			if (!nums[i].empty())
-			{
-				continue;
-			}
-			else
-			{
-				nums[i] = follower;
-				numoffollowers++;
-				break;
-			}
+	for (i = 0; i < nums.length(); i++)
+	{
+
+		if (!nums[i].empty())
+		{
+			continue;
+		}
+		else
+		{
+			nums[i] = follower;
+			numoffollowers++;
+			break;
 		}
 	}
 
