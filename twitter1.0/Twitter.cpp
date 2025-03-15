@@ -33,45 +33,40 @@ int question()
 	return choice;
 }
 
-void Menu(TwitterClass<string>&user, int choice)
+void Menu(TwitterClass<string>&user)
 {
-	if (choice == 1)
-	{
-		user.PrintFollower();
-		choice = question();
-		Menu(user, choice);
+	int choice = question();
 
-	}
-	else if (choice == 2)
+	//Changed to while loop since it kept throwing a recursion error.
+	while (choice != 4)
 	{
-		user.AddFollower();
-		choice = question();
-		Menu(user, choice);
 
-	}
-	else if (choice == 3)
-	{
-		user.RemoveFollower();
-		user.PrintFollower();
-		choice = question();
-		Menu(user, choice);
-	}
-	else if (choice == 4) 
-	{
-		return;
-	}
-	else
-	{
-		cout << "You entered in the wrong input.\n";
-		choice = question();
-		Menu(user, choice);
+		if (choice == 1)
+		{
+			user.PrintFollower();
 
+		}
+		else if (choice == 2)
+		{
+			user.AddFollower();
+
+		}
+		else if (choice == 3)
+		{
+			user.RemoveFollower();
+			user.PrintFollower();
+		}
+		else
+		{
+			cout << "You entered in the wrong input.\n";
+		}
+
+		choice = question();
 	}
 }
 
 int main() 
 {
-	int choice;
 	string name;
 	string username;
 	int age;
@@ -95,8 +90,6 @@ int main()
 	cout << "\nSo, your name is set to: " << name <<  endl;
 	cout << "Your profile is: \n" << userp << endl;
 
-	choice = question();
-
-	Menu(user, choice);
+	Menu(user);
 
 }

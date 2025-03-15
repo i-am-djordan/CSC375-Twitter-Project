@@ -20,7 +20,6 @@ private:
 	A* elements;
 	A dud;
 	int capacity;
-
 	int errorCode;
 
 };

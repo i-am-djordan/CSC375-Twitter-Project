@@ -25,10 +25,12 @@ public:
 	void RemoveFollower();
 
 };
+
 template <typename T>
 void TwitterClass<T> :: AddFollower()
 {
 	string follower;
+	int size = nums.length();
 	int i = 0;
 
 	cout << "What is the username of the follower you would like to add?\n";
@@ -36,7 +38,7 @@ void TwitterClass<T> :: AddFollower()
 
 	if (nums.length() == numoffollowers)
 	{
-		nums.changeSize(nums.length() * 2);
+		nums.changeSize(size * 2);
 		cout << "\nFollower list was full. Doubling the size! \n";
 		AddFollower();
 	}
@@ -90,7 +92,7 @@ void TwitterClass<T> :: RemoveFollower()
 	string follower;
 	int i = 0;
 	int used = 0;
-	int newSize = 0;
+	int newSizeT = 0;
 	int oldSize = nums.length();
 
 	cout << "What is the username of the follower you would like to remove?" << endl;
@@ -132,8 +134,8 @@ void TwitterClass<T> :: RemoveFollower()
 
 	if (used < (nums.length() * 0.25))
 	{
-		newSize = oldSize / 2;
-		nums.changeSize(newSize);
+		newSizeT = oldSize / 2;
+		nums.changeSize(newSizeT);
 		cout << "Since followers list had less than 25% of the list being utilized the size was cut in half.\n";
 	}
 
